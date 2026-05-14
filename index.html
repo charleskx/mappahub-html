@@ -3,16 +3,173 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Primary Meta ───────────────────────────────────────────────────── -->
   <title>MappaHub — Visualize sua rede de parceiros no mapa</title>
   <meta name="description" content="Importe, gerencie e compartilhe seus pontos de venda e parceiros em um mapa interativo. Geocoding automático, importação via Excel e equipe ilimitada. Comece grátis por 14 dias." />
-  <meta property="og:title" content="MappaHub — Visualize sua rede de parceiros no mapa" />
-  <meta property="og:description" content="Gerencie distribuidores, franquias e pontos de venda em um painel centralizado com mapa interativo." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mappahub.com.br" />
+  <meta name="author" content="MappaHub" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mappahub.com.br" />
+
+  <!-- ── Open Graph ──────────────────────────────────────────────────────── -->
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://mappahub.com.br" />
+  <meta property="og:site_name"    content="MappaHub" />
+  <meta property="og:locale"       content="pt_BR" />
+  <meta property="og:title"        content="MappaHub — Visualize sua rede de parceiros no mapa" />
+  <meta property="og:description"  content="Importe, gerencie e compartilhe seus pontos de venda e parceiros em um mapa interativo. Geocoding automático, importação via Excel e equipe ilimitada. Comece grátis por 14 dias." />
+  <meta property="og:image"        content="https://mappahub.com.br/og-image.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"    content="MappaHub — painel de mapa interativo com pins de parceiros" />
+
+  <!-- ── Twitter Card ───────────────────────────────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="MappaHub — Visualize sua rede de parceiros no mapa" />
+  <meta name="twitter:description" content="Importe, gerencie e compartilhe seus pontos de venda e parceiros em um mapa interativo. Geocoding automático, importação via Excel e equipe ilimitada." />
+  <meta name="twitter:image"       content="https://mappahub.com.br/og-image.png" />
+  <meta name="twitter:image:alt"   content="MappaHub — painel de mapa interativo com pins de parceiros" />
+
+  <!-- ── Favicon & PWA ──────────────────────────────────────────────────── -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#2563EB" />
+
+  <!-- ── Fonts ──────────────────────────────────────────────────────────── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ── Stylesheet ─────────────────────────────────────────────────────── -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- ── Structured Data: SoftwareApplication ──────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "MappaHub",
+    "url": "https://mappahub.com.br",
+    "description": "Plataforma SaaS para visualizar, gerenciar e compartilhar redes de parceiros, distribuidores e franquias em um mapa interativo com geocoding automático.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "screenshot": "https://mappahub.com.br/og-image.png",
+    "featureList": [
+      "Geocoding automático de endereços",
+      "Importação via planilha Excel",
+      "Tipos de pin customizáveis",
+      "Mapas públicos por link compartilhável",
+      "Equipe ilimitada sem custo extra",
+      "Dashboard com métricas e exportação de dados"
+    ],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Plano Mensal",
+        "price": "297.90",
+        "priceCurrency": "BRL",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://app.mappahub.com.br/register",
+        "description": "Parceiros ilimitados, usuários ilimitados, geocoding automático, importação via Excel, mapas públicos e suporte via e-mail."
+      },
+      {
+        "@type": "Offer",
+        "name": "Plano Anual",
+        "price": "3217.90",
+        "priceCurrency": "BRL",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://app.mappahub.com.br/register?plan=annual",
+        "description": "Tudo do plano mensal mais suporte prioritário com SLA de 4h e prioridade no fila de geocoding."
+      }
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "MappaHub",
+      "url": "https://mappahub.com.br"
+    }
+  }
+  </script>
+
+  <!-- ── Structured Data: Organization ─────────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MappaHub",
+    "url": "https://mappahub.com.br",
+    "logo": "https://mappahub.com.br/icon.svg",
+    "sameAs": [],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "suporte@mappahub.com.br",
+      "contactType": "customer support",
+      "availableLanguage": "Portuguese"
+    }
+  }
+  </script>
+
+  <!-- ── Structured Data: FAQPage ───────────────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Preciso de cartão de crédito para começar o trial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O trial de 14 dias é totalmente gratuito e não exige cadastro de cartão. Você só insere dados de pagamento quando decidir assinar um plano pago."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quantos parceiros posso cadastrar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Parceiros ilimitados em todos os planos. Não existe limite de cadastros, usuários ou mapas — você paga um valor fixo mensal ou anual independente do volume."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Consigo importar minha planilha Excel existente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O MappaHub aceita arquivos .xlsx com as colunas que você já usa. Basta mapear os campos (nome, endereço, etc.) e importar. A importação é incremental — apenas os registros novos ou alterados são processados, preservando o histórico."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O mapa público mostra dados sensíveis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Você controla o que aparece. Cada parceiro pode ser marcado como público ou interno. O mapa público exibe apenas os parceiros marcados como públicos. Dados internos e informações de equipe nunca são expostos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que é a prioridade no Geocoding do plano Anual?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quando vários clientes enviam endereços para geocodificar ao mesmo tempo, os clientes do plano Anual têm seus jobs processados primeiro na fila. Isso garante que importações grandes de clientes anuais não fiquem aguardando atrás de outros."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso cancelar a qualquer momento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O plano Mensal pode ser cancelado a qualquer momento pelo painel, sem multa ou burocracia. No plano Anual, o cancelamento encerra a renovação automática ao fim do período contratado."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -159,11 +316,11 @@
     </section>
 
     <!-- ── Features ──────────────────────────────────────────────────────── -->
-    <section class="features section" id="features">
+    <section class="features section" id="features" aria-labelledby="features-title">
       <div class="container">
         <div class="section-header">
           <div class="section-tag">Funcionalidades</div>
-          <h2 class="section-title">Tudo que você precisa para<br />gerenciar sua rede</h2>
+          <h2 class="section-title" id="features-title">Tudo que você precisa para<br />gerenciar sua rede</h2>
           <p class="section-desc">Do cadastro manual à importação em massa — o MappaHub centraliza sua operação geográfica.</p>
         </div>
 
@@ -171,7 +328,7 @@
 
           <div class="feature-card feature-card--wide">
             <div class="feature-icon" style="background:#eff6ff;color:#2563eb">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <h3>Geocoding automático</h3>
             <p>Cadastre endereços em texto e o MappaHub converte automaticamente em coordenadas. Nenhum dado técnico necessário.</p>
@@ -184,7 +341,7 @@
 
           <div class="feature-card">
             <div class="feature-icon" style="background:#f0fdf4;color:#10b981">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
             </div>
             <h3>Importação via Excel</h3>
             <p>Suba sua planilha existente e importe centenas de parceiros em segundos, com suporte a atualização e remoção.</p>
@@ -192,7 +349,7 @@
 
           <div class="feature-card">
             <div class="feature-icon" style="background:#fff7ed;color:#f97316">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/></svg>
             </div>
             <h3>Tipos de pin customizáveis</h3>
             <p>Crie categorias com cores distintas — Loja, Distribuidor, Franquia — e filtre no mapa com um clique.</p>
@@ -200,7 +357,7 @@
 
           <div class="feature-card">
             <div class="feature-icon" style="background:#fdf4ff;color:#a855f7">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
             </div>
             <h3>Mapas públicos por link</h3>
             <p>Gere um link de mapa público para clientes, fornecedores ou equipes externas sem precisar de login.</p>
@@ -208,7 +365,7 @@
 
           <div class="feature-card">
             <div class="feature-icon" style="background:#eff6ff;color:#2563eb">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <h3>Equipe ilimitada</h3>
             <p>Convide colaboradores com perfis de acesso distintos — dono, admin ou operador. Sem custo por usuário.</p>
@@ -216,7 +373,7 @@
 
           <div class="feature-card feature-card--wide">
             <div class="feature-icon" style="background:#f0fdf4;color:#10b981">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
             <h3>Dashboard e exportação</h3>
             <p>Acompanhe o crescimento da rede com métricas em tempo real e exporte dados atualizados em Excel a qualquer momento.</p>
@@ -232,11 +389,11 @@
     </section>
 
     <!-- ── How it works ───────────────────────────────────────────────────── -->
-    <section class="how section" id="how-it-works">
+    <section class="how section" id="how-it-works" aria-labelledby="how-title">
       <div class="container">
         <div class="section-header">
           <div class="section-tag">Como funciona</div>
-          <h2 class="section-title">Do zero ao mapa em três passos</h2>
+          <h2 class="section-title" id="how-title">Do zero ao mapa em três passos</h2>
           <p class="section-desc">Sem integrações complexas. Sem dados técnicos. Você só precisa da sua planilha.</p>
         </div>
 
@@ -323,11 +480,11 @@
     </section>
 
     <!-- ── Pricing ────────────────────────────────────────────────────────── -->
-    <section class="pricing section" id="pricing">
+    <section class="pricing section" id="pricing" aria-labelledby="pricing-title">
       <div class="container">
         <div class="section-header">
           <div class="section-tag">Preços</div>
-          <h2 class="section-title">Simples, sem surpresas</h2>
+          <h2 class="section-title" id="pricing-title">Simples, sem surpresas</h2>
           <p class="section-desc">Um plano completo. Sem limites por parceiro ou usuário. Sem taxas ocultas.</p>
         </div>
 
@@ -390,70 +547,70 @@
     </section>
 
     <!-- ── FAQ ────────────────────────────────────────────────────────────── -->
-    <section class="faq section" id="faq">
+    <section class="faq section" id="faq" aria-labelledby="faq-title">
       <div class="container">
         <div class="section-header">
           <div class="section-tag">FAQ</div>
-          <h2 class="section-title">Dúvidas frequentes</h2>
+          <h2 class="section-title" id="faq-title">Dúvidas frequentes</h2>
         </div>
 
         <div class="faq-list">
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
               Preciso de cartão de crédito para começar o trial?
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
               <p>Não. O trial de 14 dias é totalmente gratuito e não exige cadastro de cartão. Você só insere dados de pagamento quando decidir assinar um plano pago.</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
               Quantos parceiros posso cadastrar?
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
               <p>Parceiros ilimitados em todos os planos. Não existe limite de cadastros, usuários ou mapas — você paga um valor fixo mensal ou anual independente do volume.</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
               Consigo importar minha planilha Excel existente?
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
               <p>Sim. O MappaHub aceita arquivos .xlsx com as colunas que você já usa. Basta mapear os campos (nome, endereço, etc.) e importar. A importação é incremental — apenas os registros novos ou alterados são processados, preservando o histórico.</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
               O mapa público mostra dados sensíveis?
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
               <p>Você controla o que aparece. Cada parceiro pode ser marcado como <em>público</em> ou <em>interno</em>. O mapa público exibe apenas os parceiros marcados como públicos. Dados internos e informações de equipe nunca são expostos.</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
               O que é a prioridade no Geocoding do plano Anual?
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
               <p>Quando vários clientes enviam endereços para geocodificar ao mesmo tempo, os clientes do plano Anual têm seus jobs processados primeiro na fila. Isso garante que importações grandes de clientes anuais não fiquem aguardando atrás de outros.</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
               Posso cancelar a qualquer momento?
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
               <p>Sim. O plano Mensal pode ser cancelado a qualquer momento pelo painel, sem multa ou burocracia. No plano Anual, o cancelamento encerra a renovação automática ao fim do período contratado.</p>
             </div>
           </div>
@@ -491,7 +648,7 @@
         </a>
         <p>Visualize e gerencie sua rede de parceiros com inteligência geográfica.</p>
       </div>
-      <div class="footer-links">
+      <nav class="footer-links" aria-label="Links do rodapé">
         <div class="footer-col">
           <h4>Produto</h4>
           <a href="#features">Funcionalidades</a>
@@ -509,11 +666,11 @@
           <a href="https://app.mappahub.com.br/login">Entrar</a>
           <a href="https://app.mappahub.com.br/register">Criar conta</a>
         </div>
-      </div>
+      </nav>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <span>© 2025 MappaHub. Todos os direitos reservados.</span>
+        <span>© 2026 MappaHub. Todos os direitos reservados.</span>
       </div>
     </div>
   </footer>
