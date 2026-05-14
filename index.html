@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MappaHub — Visualize sua rede de parceiros no mapa</title>
+  <meta name="description" content="Importe, gerencie e compartilhe seus pontos de venda e parceiros em um mapa interativo. Geocoding automático, importação via Excel e equipe ilimitada. Comece grátis por 14 dias." />
+  <meta property="og:title" content="MappaHub — Visualize sua rede de parceiros no mapa" />
+  <meta property="og:description" content="Gerencie distribuidores, franquias e pontos de venda em um painel centralizado com mapa interativo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mappahub.com.br" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Nav ─────────────────────────────────────────────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="8" fill="#2563EB"/>
+          <path d="M14 6C10.686 6 8 8.686 8 12C8 16.5 14 22 14 22C14 22 20 16.5 20 12C20 8.686 17.314 6 14 6ZM14 14.5C12.619 14.5 11.5 13.381 11.5 12C11.5 10.619 12.619 9.5 14 9.5C15.381 9.5 16.5 10.619 16.5 12C16.5 13.381 15.381 14.5 14 14.5Z" fill="white"/>
+        </svg>
+        <span>MappaHub</span>
+      </a>
+      <nav class="nav-links" aria-label="Menu principal">
+        <a href="#features">Funcionalidades</a>
+        <a href="#how-it-works">Como funciona</a>
+        <a href="#pricing">Preços</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://app.mappahub.com.br/login" class="btn-ghost">Entrar</a>
+        <a href="https://app.mappahub.com.br/register" class="btn-primary">Começar grátis</a>
+      </div>
+      <button class="nav-mobile-toggle" aria-label="Abrir menu" id="mobileToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-menu" id="mobileMenu">
+      <a href="#features">Funcionalidades</a>
+      <a href="#how-it-works">Como funciona</a>
+      <a href="#pricing">Preços</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://app.mappahub.com.br/login" class="btn-ghost">Entrar</a>
+      <a href="https://app.mappahub.com.br/register" class="btn-primary">Começar grátis</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ──────────────────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Trial gratuito de 14 dias · Sem cartão de crédito
+          </div>
+          <h1 class="hero-title">
+            Toda sua rede de parceiros<br />
+            <span class="gradient-text">visível no mapa</span>
+          </h1>
+          <p class="hero-desc">
+            Importe sua planilha, geocodifique endereços automaticamente e compartilhe
+            um mapa interativo com distribuidores, lojas e franquias — tudo em um painel
+            centralizado.
+          </p>
+          <div class="hero-actions">
+            <a href="https://app.mappahub.com.br/register" class="btn-primary btn-lg">
+              Começar grátis por 14 dias
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#how-it-works" class="btn-outline btn-lg">Ver como funciona</a>
+          </div>
+          <p class="hero-note">Sem cartão de crédito · Cancele quando quiser</p>
+        </div>
+
+        <!-- Map mockup -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="map-frame">
+            <div class="map-titlebar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="map-url">app.mappahub.com.br/map</span>
+            </div>
+            <div class="map-body">
+              <div class="map-canvas">
+                <div class="map-grid"></div>
+                <!-- Pins -->
+                <div class="pin pin-blue"  style="top:28%;left:38%"><span class="pin-label">Loja</span></div>
+                <div class="pin pin-amber" style="top:45%;left:55%"><span class="pin-label">Dist.</span></div>
+                <div class="pin pin-green" style="top:60%;left:35%"><span class="pin-label">Franquia</span></div>
+                <div class="pin pin-red"   style="top:35%;left:65%"><span class="pin-label">Rep.</span></div>
+                <div class="pin pin-blue"  style="top:55%;left:70%"></div>
+                <div class="pin pin-amber" style="top:70%;left:52%"></div>
+                <div class="pin pin-green" style="top:22%;left:58%"></div>
+                <div class="pin pin-blue"  style="top:75%;left:28%"></div>
+                <div class="pin pin-red"   style="top:42%;left:24%"></div>
+                <!-- Cluster -->
+                <div class="cluster" style="top:50%;left:48%">4</div>
+                <!-- Popup -->
+                <div class="map-popup">
+                  <div class="popup-title">Distribuidora Alfa Ltda</div>
+                  <div class="popup-addr">Av. Paulista, 1000 · São Paulo, SP</div>
+                  <div class="popup-badge">Distribuidor</div>
+                </div>
+              </div>
+              <!-- Sidebar -->
+              <div class="map-sidebar">
+                <div class="sidebar-search">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="6" cy="6" r="4" stroke="#94a3b8" stroke-width="1.5"/><path d="M10 10l2 2" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  <span>Buscar parceiros…</span>
+                </div>
+                <div class="sidebar-stats">
+                  <div class="stat"><span class="stat-num">247</span><span class="stat-lbl">Parceiros</span></div>
+                  <div class="stat"><span class="stat-num">5</span><span class="stat-lbl">Tipos</span></div>
+                </div>
+                <div class="sidebar-list">
+                  <div class="list-item active">
+                    <span class="list-dot" style="background:#2563eb"></span>
+                    <div><div class="list-name">Distribuidora Alfa</div><div class="list-city">São Paulo, SP</div></div>
+                  </div>
+                  <div class="list-item">
+                    <span class="list-dot" style="background:#f59e0b"></span>
+                    <div><div class="list-name">Rede Beta Franquias</div><div class="list-city">Rio de Janeiro, RJ</div></div>
+                  </div>
+                  <div class="list-item">
+                    <span class="list-dot" style="background:#10b981"></span>
+                    <div><div class="list-name">Gama Representações</div><div class="list-city">Curitiba, PR</div></div>
+                  </div>
+                  <div class="list-item">
+                    <span class="list-dot" style="background:#ef4444"></span>
+                    <div><div class="list-name">Delta Comércio</div><div class="list-city">Belo Horizonte, MG</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="stats-bar">
+        <div class="container stats-inner">
+          <div class="stat-item"><strong>10.000+</strong> parceiros cadastrados</div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><strong>99,9%</strong> de uptime</div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><strong>14 dias</strong> de trial gratuito</div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><strong>Importação</strong> via Excel em segundos</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Features ──────────────────────────────────────────────────────── -->
+    <section class="features section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Funcionalidades</div>
+          <h2 class="section-title">Tudo que você precisa para<br />gerenciar sua rede</h2>
+          <p class="section-desc">Do cadastro manual à importação em massa — o MappaHub centraliza sua operação geográfica.</p>
+        </div>
+
+        <div class="features-grid">
+
+          <div class="feature-card feature-card--wide">
+            <div class="feature-icon" style="background:#eff6ff;color:#2563eb">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3>Geocoding automático</h3>
+            <p>Cadastre endereços em texto e o MappaHub converte automaticamente em coordenadas. Nenhum dado técnico necessário.</p>
+            <ul class="feature-list">
+              <li>Processamento em fila com retry automático</li>
+              <li>Log detalhado de falhas por parceiro</li>
+              <li>Prioridade de fila para clientes do plano anual</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#f0fdf4;color:#10b981">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <h3>Importação via Excel</h3>
+            <p>Suba sua planilha existente e importe centenas de parceiros em segundos, com suporte a atualização e remoção.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#fff7ed;color:#f97316">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/></svg>
+            </div>
+            <h3>Tipos de pin customizáveis</h3>
+            <p>Crie categorias com cores distintas — Loja, Distribuidor, Franquia — e filtre no mapa com um clique.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#fdf4ff;color:#a855f7">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <h3>Mapas públicos por link</h3>
+            <p>Gere um link de mapa público para clientes, fornecedores ou equipes externas sem precisar de login.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#eff6ff;color:#2563eb">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Equipe ilimitada</h3>
+            <p>Convide colaboradores com perfis de acesso distintos — dono, admin ou operador. Sem custo por usuário.</p>
+          </div>
+
+          <div class="feature-card feature-card--wide">
+            <div class="feature-icon" style="background:#f0fdf4;color:#10b981">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>Dashboard e exportação</h3>
+            <p>Acompanhe o crescimento da rede com métricas em tempo real e exporte dados atualizados em Excel a qualquer momento.</p>
+            <ul class="feature-list">
+              <li>Métricas de parceiros, importações e geocoding</li>
+              <li>Exportação com colunas customizadas</li>
+              <li>Histórico completo de alterações</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── How it works ───────────────────────────────────────────────────── -->
+    <section class="how section" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Como funciona</div>
+          <h2 class="section-title">Do zero ao mapa em três passos</h2>
+          <p class="section-desc">Sem integrações complexas. Sem dados técnicos. Você só precisa da sua planilha.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <h3>Cadastre ou importe seus parceiros</h3>
+              <p>Adicione parceiros manualmente ou suba sua planilha Excel com nome, endereço e demais dados. O MappaHub suporta importação com atualização incremental — apenas o que mudou é alterado.</p>
+            </div>
+            <div class="step-visual">
+              <div class="step-card">
+                <div class="step-card-header">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  parceiros_2025.xlsx
+                </div>
+                <div class="step-rows">
+                  <div class="step-row"><span class="row-dot" style="background:#2563eb"></span> Distribuidora Alfa · São Paulo</div>
+                  <div class="step-row"><span class="row-dot" style="background:#f59e0b"></span> Rede Beta · Rio de Janeiro</div>
+                  <div class="step-row"><span class="row-dot" style="background:#10b981"></span> Gama Franquias · Curitiba</div>
+                </div>
+                <div class="step-progress">
+                  <div class="progress-bar"><div class="progress-fill" style="width:72%"></div></div>
+                  <span>72% importado…</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step step--reverse">
+            <div class="step-number">02</div>
+            <div class="step-content">
+              <h3>Geocoding acontece automaticamente</h3>
+              <p>Os endereços são convertidos em coordenadas automaticamente em segundo plano. Nenhuma ação sua é necessária. Em caso de falha, você recebe um alerta com o motivo e pode corrigir o endereço.</p>
+            </div>
+            <div class="step-visual">
+              <div class="step-card">
+                <div class="geocoding-list">
+                  <div class="geo-item geo-done">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Distribuidora Alfa · Geocodificado
+                  </div>
+                  <div class="geo-item geo-done">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Rede Beta · Geocodificado
+                  </div>
+                  <div class="geo-item geo-pending">
+                    <div class="spinner"></div>
+                    Gama Franquias · Processando…
+                  </div>
+                  <div class="geo-item geo-error">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    Delta Comércio · Endereço não encontrado
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">03</div>
+            <div class="step-content">
+              <h3>Compartilhe o mapa com quem quiser</h3>
+              <p>Gere um link de mapa público sem login para clientes e parceiros externos, ou mantenha um mapa interno para sua equipe. Você controla quem vê o quê.</p>
+            </div>
+            <div class="step-visual">
+              <div class="step-card step-card--map">
+                <div class="mini-map">
+                  <div class="mini-pin" style="top:30%;left:40%;background:#2563eb"></div>
+                  <div class="mini-pin" style="top:55%;left:60%;background:#f59e0b"></div>
+                  <div class="mini-pin" style="top:65%;left:35%;background:#10b981"></div>
+                  <div class="mini-pin" style="top:25%;left:65%;background:#ef4444"></div>
+                  <div class="mini-pin" style="top:45%;left:25%;background:#2563eb"></div>
+                </div>
+                <div class="share-link">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  mappahub.com.br/map/pub-abc123
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Pricing ────────────────────────────────────────────────────────── -->
+    <section class="pricing section" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Preços</div>
+          <h2 class="section-title">Simples, sem surpresas</h2>
+          <p class="section-desc">Um plano completo. Sem limites por parceiro ou usuário. Sem taxas ocultas.</p>
+        </div>
+
+        <div class="pricing-grid">
+
+          <!-- Monthly -->
+          <div class="pricing-card">
+            <div class="pricing-label">Mensal</div>
+            <div class="pricing-price">
+              <span class="price-currency">R$</span>
+              <span class="price-value">297<span class="price-cents">,90</span></span>
+              <span class="price-period">/mês</span>
+            </div>
+            <p class="pricing-note">Sem fidelidade — cancele quando quiser</p>
+            <ul class="pricing-features">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Parceiros ilimitados</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Usuários ilimitados</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Geocoding automático</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Importação via Excel</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mapas públicos</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Suporte via e-mail</li>
+            </ul>
+            <a href="https://app.mappahub.com.br/register" class="btn-outline btn-full">Começar grátis por 14 dias</a>
+          </div>
+
+          <!-- Annual -->
+          <div class="pricing-card pricing-card--featured">
+            <div class="pricing-badge">Recomendado</div>
+            <div class="pricing-label">Anual</div>
+            <div class="pricing-price">
+              <span class="price-currency">R$</span>
+              <span class="price-value">268<span class="price-cents">,16</span></span>
+              <span class="price-period">/mês</span>
+            </div>
+            <p class="pricing-note-annual">R$ 3.217,90 cobrado anualmente</p>
+            <div class="pricing-savings">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Economize R$ 356,90 por ano
+            </div>
+            <ul class="pricing-features">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Tudo do plano Mensal</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Suporte prioritário</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> SLA de resposta em até 4h</li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Prioridade no Geocoding
+                <span class="feature-tag">Exclusivo</span>
+              </li>
+            </ul>
+            <a href="https://app.mappahub.com.br/register?plan=annual" class="btn-primary btn-full">⚡ Começar com plano Anual</a>
+          </div>
+
+        </div>
+
+        <p class="pricing-trial">
+          Todos os planos incluem <strong>14 dias de trial gratuito</strong>, sem necessidade de cartão de crédito.
+          Após o trial, escolha o plano que melhor se encaixa.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── FAQ ────────────────────────────────────────────────────────────── -->
+    <section class="faq section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">FAQ</div>
+          <h2 class="section-title">Dúvidas frequentes</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Preciso de cartão de crédito para começar o trial?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Não. O trial de 14 dias é totalmente gratuito e não exige cadastro de cartão. Você só insere dados de pagamento quando decidir assinar um plano pago.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Quantos parceiros posso cadastrar?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Parceiros ilimitados em todos os planos. Não existe limite de cadastros, usuários ou mapas — você paga um valor fixo mensal ou anual independente do volume.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Consigo importar minha planilha Excel existente?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Sim. O MappaHub aceita arquivos .xlsx com as colunas que você já usa. Basta mapear os campos (nome, endereço, etc.) e importar. A importação é incremental — apenas os registros novos ou alterados são processados, preservando o histórico.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              O mapa público mostra dados sensíveis?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Você controla o que aparece. Cada parceiro pode ser marcado como <em>público</em> ou <em>interno</em>. O mapa público exibe apenas os parceiros marcados como públicos. Dados internos e informações de equipe nunca são expostos.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              O que é a prioridade no Geocoding do plano Anual?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Quando vários clientes enviam endereços para geocodificar ao mesmo tempo, os clientes do plano Anual têm seus jobs processados primeiro na fila. Isso garante que importações grandes de clientes anuais não fiquem aguardando atrás de outros.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Posso cancelar a qualquer momento?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Sim. O plano Mensal pode ser cancelado a qualquer momento pelo painel, sem multa ou burocracia. No plano Anual, o cancelamento encerra a renovação automática ao fim do período contratado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Final CTA ──────────────────────────────────────────────────────── -->
+    <section class="cta-final section">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Pronto para ver sua rede no mapa?</h2>
+          <p>Comece gratuitamente hoje. Sem cartão de crédito, sem compromisso.</p>
+          <a href="https://app.mappahub.com.br/register" class="btn-primary btn-lg">
+            Criar conta grátis
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <span class="cta-note">14 dias grátis · Sem cartão de crédito · Cancele quando quiser</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <rect width="28" height="28" rx="8" fill="#2563EB"/>
+            <path d="M14 6C10.686 6 8 8.686 8 12C8 16.5 14 22 14 22C14 22 20 16.5 20 12C20 8.686 17.314 6 14 6ZM14 14.5C12.619 14.5 11.5 13.381 11.5 12C11.5 10.619 12.619 9.5 14 9.5C15.381 9.5 16.5 10.619 16.5 12C16.5 13.381 15.381 14.5 14 14.5Z" fill="white"/>
+          </svg>
+          <span>MappaHub</span>
+        </a>
+        <p>Visualize e gerencie sua rede de parceiros com inteligência geográfica.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Produto</h4>
+          <a href="#features">Funcionalidades</a>
+          <a href="#pricing">Preços</a>
+          <a href="https://app.mappahub.com.br/register">Trial grátis</a>
+        </div>
+        <div class="footer-col">
+          <h4>Suporte</h4>
+          <a href="#faq">FAQ</a>
+          <a href="https://app.mappahub.com.br/support">Abrir ticket</a>
+          <a href="mailto:suporte@mappahub.com.br">suporte@mappahub.com.br</a>
+        </div>
+        <div class="footer-col">
+          <h4>Acesso</h4>
+          <a href="https://app.mappahub.com.br/login">Entrar</a>
+          <a href="https://app.mappahub.com.br/register">Criar conta</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© 2025 MappaHub. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
