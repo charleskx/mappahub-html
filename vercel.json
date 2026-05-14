@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/login",
+      "destination": "https://app.mappahub.com.br/login",
+      "permanent": false
+    },
+    {
+      "source": "/register",
+      "destination": "https://app.mappahub.com.br/register",
+      "permanent": false
+    },
+    {
+      "source": "/register/:path*",
+      "destination": "https://app.mappahub.com.br/register/:path*",
+      "permanent": false
+    }
+  ]
+}
