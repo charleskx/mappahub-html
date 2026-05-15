@@ -93,16 +93,16 @@ ul { list-style: none; }
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: var(--text-muted);
+  color: var(--blue);
   font-size: .875rem;
   font-weight: 500;
   padding: 10px 16px;
   border-radius: var(--radius-sm);
-  border: none;
+  border: 1px solid var(--blue);
   cursor: pointer;
-  transition: color .15s, background .15s;
+  transition: color .15s, background .15s, border-color .15s;
 }
-.btn-ghost:hover { color: var(--text); background: var(--border); }
+.btn-ghost:hover { color: var(--blue-dark); border-color: var(--blue-dark); background: var(--blue-light); }
 
 .btn-outline {
   display: inline-flex;
