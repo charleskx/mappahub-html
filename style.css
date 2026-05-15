@@ -266,6 +266,7 @@ ul { list-style: none; }
 .nav-mobile-menu .btn-primary,
 .nav-mobile-menu .btn-ghost { width: 100%; justify-content: center; margin-top: 4px; }
 .nav-mobile-menu .btn-primary { color: #fff; }
+.nav-mobile-menu .btn-ghost { color: var(--blue); border-color: var(--blue); }
 
 .nav-mobile-menu.open { display: flex; }
 
