@@ -115,6 +115,59 @@ Campos do formulario:
 - Tipo de rede: distribuidores, franquias, lojas, representantes, credenciados, outros
 - Quantidade aproximada de pontos
 
+## Ponto de atencao: "parceiros ilimitados" + geocoding automatico + mapa publico
+
+O discurso de "parceiros ilimitados" e forte comercialmente, mas precisa ser protegido. O risco aparece quando tres coisas crescem ao mesmo tempo:
+
+- Muitos parceiros importados em massa.
+- Geocoding automatico para todos os enderecos.
+- Mapa publico recebendo muitas visitas.
+
+Isso pode gerar custo variavel de geocoding, mapas, infraestrutura e suporte. Se o cliente pagar valor fixo baixo e usar volume muito alto, a margem pode desaparecer.
+
+### Como corrigir sem enfraquecer a oferta
+
+Manter a promessa comercial:
+
+> Parceiros ilimitados para cadastro e gestao.
+
+Adicionar uma regra de uso justo:
+
+> Os planos incluem uso justo de geocoding, importacoes e visualizacoes de mapas publicos. Volumes muito altos podem exigir plano Business ou Enterprise.
+
+Separar os limites tecnicos dos limites comerciais:
+
+- Parceiros cadastrados: ilimitados.
+- Usuarios: ilimitados.
+- Geocoding automatico: franquia mensal por plano.
+- Importacoes em massa: franquia mensal por plano.
+- Visualizacoes do mapa publico: franquia mensal por plano.
+- Volumes especiais: sob consulta.
+
+Exemplo de estrutura:
+
+| Item | Mensal | Business futuro |
+|---|---:|---:|
+| Parceiros cadastrados | Ilimitado | Ilimitado |
+| Usuarios | Ilimitado | Ilimitado |
+| Novos geocodings por mes | 2.000 | 10.000 |
+| Reprocessamentos/importacoes grandes | Uso justo | Prioritario |
+| Visualizacoes do mapa publico | 50.000/mes | 250.000/mes |
+| SLA | Email | Prioritario |
+
+Acao tecnica recomendada:
+
+- Salvar coordenadas geocodificadas para nao reprocessar enderecos iguais.
+- Reprocessar geocoding apenas quando o endereco mudar.
+- Criar fila com limite por conta.
+- Registrar consumo por conta: geocodings, importacoes, falhas e visualizacoes.
+- Exibir aviso antes de importacoes grandes.
+- Ter um plano Enterprise para alto volume.
+
+Texto sugerido para FAQ:
+
+> O cadastro de parceiros e usuarios e ilimitado. Para garantir estabilidade e preco justo para todos os clientes, geocoding automatico, importacoes em massa e visualizacoes de mapas publicos seguem uma politica de uso justo. Se sua operacao tiver volume muito alto, montamos um plano Business ou Enterprise adequado.
+
 ## Rotina semanal de prospeccao
 
 Meta inicial:
@@ -277,4 +330,3 @@ Dia 6:
 Dia 7:
 
 - Revisar numeros e repetir no segmento que respondeu melhor.
-
