@@ -58,7 +58,7 @@
     "operatingSystem": "Web",
     "screenshot": "https://mappahub.com.br/og-image.png",
     "featureList": [
-      "Geocoding automático de endereços",
+      "Geocoding automático de endereços (até 2.000/mês)",
       "Importação via planilha Excel",
       "Tipos de pin customizáveis",
       "Mapas públicos por link compartilhável",
@@ -74,17 +74,27 @@
         "priceValidUntil": "2027-12-31",
         "availability": "https://schema.org/InStock",
         "url": "https://app.mappahub.com.br/register",
-        "description": "Parceiros ilimitados, usuários ilimitados, geocoding automático, importação via Excel, mapas públicos e suporte via e-mail."
+        "description": "Parceiros e usuários ilimitados, geocoding automático (até 2.000/mês), importação via Excel, mapas públicos e suporte via e-mail."
       },
       {
         "@type": "Offer",
-        "name": "Plano Anual",
+        "name": "Plano 12 meses",
         "price": "2134.80",
         "priceCurrency": "BRL",
         "priceValidUntil": "2027-12-31",
         "availability": "https://schema.org/InStock",
         "url": "https://app.mappahub.com.br/register?plan=annual",
-        "description": "Tudo do plano mensal mais suporte prioritário com SLA de 4h e prioridade no fila de geocoding."
+        "description": "R$ 177,90/mês (economize 10%). Tudo do plano mensal mais suporte prioritário com SLA de 4h e prioridade na fila de geocoding."
+      },
+      {
+        "@type": "Offer",
+        "name": "Plano 24 meses",
+        "price": "4029.60",
+        "priceCurrency": "BRL",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://app.mappahub.com.br/register?plan=biennial",
+        "description": "R$ 167,90/mês (economize 15%). Tudo do plano mensal mais suporte prioritário com SLA de 4h e prioridade na fila de geocoding."
       }
     ],
     "provider": {
@@ -132,7 +142,15 @@
         "name": "Quantos parceiros posso cadastrar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Parceiros ilimitados em todos os planos. Não existe limite de cadastros, usuários ou mapas — você paga um valor fixo mensal ou anual independente do volume."
+          "text": "Parceiros e usuários são ilimitados para gestão da sua rede, sem custo por cadastro. Geocodificações automáticas, importações em massa e mapas públicos seguem uma política de uso justo (franquia de 2.000 geocodificações/mês) para manter estabilidade e preço previsível."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Existe algum limite de uso?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cadastro de parceiros e usuários é ilimitado. Cada plano inclui uma franquia de 2.000 geocodificações por mês — endereços já geocodificados não recontam, pois ficam em cache. Volumes maiores têm plano sob consulta."
         }
       },
       {
@@ -140,7 +158,7 @@
         "name": "Consigo importar minha planilha Excel existente?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim. O MappaHub aceita arquivos .xlsx com as colunas que você já usa. Basta mapear os campos (nome, endereço, etc.) e importar. A importação é incremental — apenas os registros novos ou alterados são processados, preservando o histórico."
+          "text": "Sim. O MappaHub aceita arquivos .xlsx com as colunas que você já usa. Basta mapear os campos (nome, endereço, etc.) e importar. A importação é incremental — apenas os registros novos ou alterados são processados, preservando o histórico e consumindo a franquia mensal de geocodificações apenas nos endereços novos."
         }
       },
       {
@@ -488,55 +506,40 @@
           <p class="section-desc">Um plano completo. Sem limites por parceiro ou usuário. Sem taxas ocultas.</p>
         </div>
 
-        <div class="pricing-grid">
+        <div class="pricing-toggle" role="radiogroup" aria-label="Período de cobrança">
+          <button type="button" class="pricing-toggle-btn" role="radio" aria-checked="false" data-period="1">Mensal</button>
+          <button type="button" class="pricing-toggle-btn is-active" role="radio" aria-checked="true" data-period="12">12 meses <span class="toggle-badge">−10%</span></button>
+          <button type="button" class="pricing-toggle-btn" role="radio" aria-checked="false" data-period="24">24 meses <span class="toggle-badge">−15%</span></button>
+        </div>
 
-          <!-- Monthly -->
-          <div class="pricing-card">
-            <div class="pricing-label">Mensal</div>
+        <div class="pricing-single">
+          <div class="pricing-card pricing-card--featured">
+            <div class="pricing-badge" id="pricingBadge">Recomendado</div>
             <div class="pricing-price">
               <span class="price-currency">R$</span>
-              <span class="price-value">197<span class="price-cents">,90</span></span>
+              <span class="price-value"><span id="priceValue">177</span><span class="price-cents">,90</span></span>
               <span class="price-period">/mês</span>
             </div>
-            <p class="pricing-note">Sem fidelidade — cancele quando quiser</p>
+            <p class="pricing-note-annual" id="pricingNote">R$ 2.134,80 cobrado anualmente</p>
+            <div class="pricing-savings" id="pricingSavings">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span id="pricingSavingsText">Economize R$ 240,00 por ano</span>
+            </div>
             <ul class="pricing-features">
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Parceiros ilimitados</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Usuários ilimitados</li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Geocoding automático</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Até 2.000 geocodificações/mês</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Importação via Excel</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mapas públicos</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Suporte via e-mail</li>
-            </ul>
-            <a href="https://app.mappahub.com.br/register" class="btn-outline btn-full">Começar grátis por 14 dias</a>
-          </div>
-
-          <!-- Annual -->
-          <div class="pricing-card pricing-card--featured">
-            <div class="pricing-badge">Recomendado</div>
-            <div class="pricing-label">Anual</div>
-            <div class="pricing-price">
-              <span class="price-currency">R$</span>
-              <span class="price-value">177<span class="price-cents">,90</span></span>
-              <span class="price-period">/mês</span>
-            </div>
-            <p class="pricing-note-annual">R$ 2.134,80 cobrado anualmente</p>
-            <div class="pricing-savings">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              Economize R$ 240,00 por ano
-            </div>
-            <ul class="pricing-features">
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Tudo do plano Mensal</li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Suporte prioritário</li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> SLA de resposta em até 4h</li>
-              <li>
+              <li class="pricing-perk" id="pricingPerk">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                Prioridade no Geocoding
+                Suporte prioritário e prioridade no Geocoding
                 <span class="feature-tag">Exclusivo</span>
               </li>
             </ul>
-            <a href="https://app.mappahub.com.br/register?plan=annual" class="btn-primary btn-full">⚡ Começar com plano Anual</a>
+            <a href="https://app.mappahub.com.br/register?plan=annual" class="btn-primary btn-full" id="pricingCta">Começar grátis por 14 dias</a>
           </div>
-
         </div>
 
         <p class="pricing-trial">
@@ -571,7 +574,17 @@
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
-              <p>Parceiros ilimitados em todos os planos. Não existe limite de cadastros, usuários ou mapas — você paga um valor fixo mensal ou anual independente do volume.</p>
+              <p>Parceiros e usuários são ilimitados para gestão da sua rede, sem custo por cadastro. Geocodificações automáticas, importações em massa e mapas públicos seguem uma política de uso justo (franquia de 2.000 geocodificações/mês) para manter estabilidade e preço previsível.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a2b" id="faq-q2b">
+              Existe algum limite de uso?
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer" id="faq-a2b" role="region" aria-labelledby="faq-q2b">
+              <p>O cadastro de parceiros e usuários é ilimitado. Cada plano inclui uma franquia de <strong>2.000 geocodificações por mês</strong> — endereços já geocodificados não recontam, pois ficam em cache. Precisa de mais volume? Falamos com você sobre um plano sob medida.</p>
             </div>
           </div>
 
@@ -581,7 +594,7 @@
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
-              <p>Sim. O MappaHub aceita arquivos .xlsx com as colunas que você já usa. Basta mapear os campos (nome, endereço, etc.) e importar. A importação é incremental — apenas os registros novos ou alterados são processados, preservando o histórico.</p>
+              <p>Sim. O MappaHub aceita arquivos .xlsx com as colunas que você já usa. Basta mapear os campos (nome, endereço, etc.) e importar. A importação é incremental — apenas os registros novos ou alterados são processados, preservando o histórico e consumindo a franquia mensal de geocodificações apenas nos endereços novos.</p>
             </div>
           </div>
 

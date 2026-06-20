@@ -92,6 +92,50 @@
   });
 })();
 
+/* ── Pricing period selector ───────────────────────────────────────────────── */
+(function () {
+  const toggle = document.querySelector('.pricing-toggle');
+  if (!toggle) return;
+
+  const PLANS = {
+    '1':  { value: '197', note: 'Sem fidelidade — cancele quando quiser', badge: '',            save: '',                          perks: false, href: 'https://app.mappahub.com.br/register' },
+    '12': { value: '177', note: 'R$ 2.134,80 cobrado anualmente',         badge: 'Recomendado', save: 'Economize R$ 240,00 por ano', perks: true,  href: 'https://app.mappahub.com.br/register?plan=annual' },
+    '24': { value: '167', note: 'R$ 4.029,60 cobrado a cada 24 meses',    badge: 'Melhor preço', save: 'Economize R$ 720,00 no total', perks: true,  href: 'https://app.mappahub.com.br/register?plan=biennial' },
+  };
+
+  const btns       = toggle.querySelectorAll('.pricing-toggle-btn');
+  const value      = document.getElementById('priceValue');
+  const note       = document.getElementById('pricingNote');
+  const badge      = document.getElementById('pricingBadge');
+  const savings    = document.getElementById('pricingSavings');
+  const savingsTxt = document.getElementById('pricingSavingsText');
+  const perk       = document.getElementById('pricingPerk');
+  const cta        = document.getElementById('pricingCta');
+
+  function apply(period) {
+    const p = PLANS[period];
+    value.textContent = p.value;
+    note.textContent  = p.note;
+    cta.href          = p.href;
+
+    badge.textContent = p.badge;
+    badge.hidden      = !p.badge;
+    savings.hidden    = !p.save;
+    if (p.save) savingsTxt.textContent = p.save;
+    perk.hidden       = !p.perks;
+
+    btns.forEach(function (b) {
+      const active = b.dataset.period === period;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-checked', String(active));
+    });
+  }
+
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.dataset.period); });
+  });
+})();
+
 /* ── Smooth scroll for anchor links ───────────────────────────────────────── */
 (function () {
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {

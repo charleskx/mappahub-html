@@ -842,13 +842,60 @@ ul { list-style: none; }
    ───────────────────────────────────────────────────────────────────────────── */
 .pricing { background: var(--bg); }
 
-.pricing-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  max-width: 760px;
+.pricing-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  max-width: 480px;
+  margin: 0 auto 32px;
+  padding: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+.pricing-toggle-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border: none;
+  background: none;
+  border-radius: 999px;
+  font: inherit;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background .2s, color .2s;
+  white-space: nowrap;
+}
+.pricing-toggle-btn:hover { color: var(--text); }
+.pricing-toggle-btn.is-active {
+  background: var(--blue);
+  color: #fff;
+  box-shadow: var(--shadow-blue);
+}
+.toggle-badge {
+  font-size: .7rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: rgba(16,185,129,.15);
+  color: #047857;
+}
+.pricing-toggle-btn.is-active .toggle-badge {
+  background: rgba(255,255,255,.2);
+  color: #fff;
+}
+
+.pricing-single {
+  max-width: 420px;
   margin: 0 auto;
 }
+.pricing-perk[hidden],
+.pricing-savings[hidden] { display: none; }
 
 .pricing-card {
   background: var(--surface);
@@ -892,15 +939,6 @@ ul { list-style: none; }
   box-shadow: 0 2px 8px rgba(245,158,11,.35);
 }
 
-.pricing-label {
-  font-size: .8125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  margin-bottom: 20px;
-  opacity: .7;
-}
-
 .pricing-price {
   display: flex;
   align-items: flex-start;
@@ -931,11 +969,6 @@ ul { list-style: none; }
   margin-left: 2px;
 }
 
-.pricing-note {
-  font-size: .8rem;
-  color: var(--text-muted);
-  margin-bottom: 20px;
-}
 .pricing-note-annual {
   font-size: .8rem;
   color: rgba(255,255,255,.7);
@@ -1247,7 +1280,8 @@ ul { list-style: none; }
   .step-number { font-size: 2.5rem; }
 
   /* Pricing */
-  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .pricing-toggle { max-width: 100%; }
+  .pricing-toggle-btn { padding: 9px 8px; font-size: .82rem; }
 
   /* Footer */
   .footer-inner { flex-direction: column; gap: 36px; }
